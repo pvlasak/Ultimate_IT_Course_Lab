@@ -1,0 +1,60 @@
+<script>
+    var post1 = {
+        content: "asdfasd", 
+        likes: 100, 
+        shares: 20
+    }
+
+    var post2 = {
+        content: "this is my second post", 
+        likes: 600, 
+        shares: 60
+    }
+
+    var post3 = {
+        content: "boring post", 
+        likes: 1, 
+        shares: 2
+    }
+
+    var post4 = {
+        content: "Extra funny post", 
+        likes: 1000, 
+        shares: 299
+    }
+
+    var facebookUserOne = { 
+        userName: "Petr",
+        password: "secretpwd",
+        email: "petr@example.com",
+        friends: ["Anna", "John"],
+        posts: [post1, post2]
+    }
+
+    var facebookUserTwo = { 
+        userName: "John",
+        password: "toppwd",
+        email: "john@example.com",
+        friends: ["Caroline", "Frank"],
+        posts: [post3, post4]
+    }
+
+    var Users = [facebookUserOne, facebookUserTwo]
+
+    for (user of Users) {
+        user.interest=[]
+        for (post of user.posts) {
+            post.reactions = post.likes
+            delete post.likes
+        }
+    }
+  
+    
+    console.log("We are done with users loop")
+    console.log(Users)
+
+</script>
+
+<body>
+
+</body>

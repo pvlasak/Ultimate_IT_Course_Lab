@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+
+<html> 
+<head>
+    <title> My Website </title>
+    <link ref="stylesheet" href="style.css"> 
+    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+    <meta name="keywords" contents="devops, learn devops, engineering">
+    <meta name="description" content="tech articles about DevOps">
+
+    <script src="app_html_css.js"> </script>
+
+
+</head>
+
+<body>
+    <div id="header-wrapper">
+        <div id="header">
+            <div id="logo-search-container">
+                <b> Logo </b>
+                <b> Name of Website </b>
+                <input type="text" placeholder="Search..."/>
+            </div>
+            <button onclick="HandleCreatePost()"> Create Post </button>
+        </div>
+    </div>
+    
+    <div id="post-form-container">
+        <form>
+            <label><b> Title </b></label>
+            <input type="text" placeholder="Enter title" required>
+            <label><b> Description </b></label>
+            <input type="text" placeholder="Enter description">
+            <label><b> Post </b></label>
+            <textarea placeholder="Your post ..."></textarea>
+            <button id="hide-btn" onclick="hidePostForm()"> Hide Form </button>
+            <button id="save-btn"> Save Form </button>
+            <input type="email">
+            <input type="password">
+
+        </form>
+    </div>
+
+
+    <div id="main-section-container">   
+          
+        <div id="article-section">
+        <img id="logo" src="C:\GitHub_Projects\Ultimate_IT_Course_Lab\dwarf-gecko-leaf-detailed-vibrant-natural-setting-image-ai-generated-dwarf-gecko-leaf-detaile.jpg"/>
+            <div>
+                <h1> Article title </h1> 
+                <h3> short description </h3>
+                <p class="article-info"> <i> written by: </i> </p>
+                <p class="article-info"> <i> date: 2025.01.01 </i></p>
+            </div>
+
+            <div>     
+                <p> paragraph 1 </p>
+                <p> paragraph 2 </p>
+
+                <h4> section header </h4>
+
+                <ul>
+                    <li> item1 </li>
+                    <li> item2 </li>
+                    <li> item3 </li>
+                    <li> item4 </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="side-section">
+            <div id="first_side_section">
+                <h2> Side Section</h2>
+                <h3> Another article </h3>
+                <h4> Article Description </h4>
+                <a href="https://www.google.com"> Click to see article </a>
+            </div>
+
+            <div id="second_side_section">
+                <h2> Another Side Section</h2>
+                <h3> Another Side article </h3>
+                <h4> Another article description </h4>
+                <a href="https://www.google.com"> Click to see article </a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p> this is the footer </p>
+    </div>
+</body>
+
+<style>
+
+    body{
+        background-color: #b0cde7;
+        margin: 0;
+    }
+
+    a {
+        color: blue;
+        font-size: 10px;
+    }
+    div {
+        margin: 10px 5px 5px 5px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 10px;
+        color: blue;
+        border: 1px solid blue;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    #header {
+        display:flex;
+        justify-content: space-between;
+        height: 50px;
+        align-items: center;
+        width: 80%;
+        margin: auto;
+    }
+
+    #header-wrapper {
+        background-color: white;
+    }
+
+    #header input {
+        margin-left: 10px;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        width: 300px;
+    }
+
+    #logo {
+        width: 100%;
+    }
+
+    .article-info {
+        color: grey;
+   }
+
+    #main-section-container {
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 15px auto;
+     }
+
+    #article-section {
+        display: flex;
+        flex-direction: column
+    }
+
+    #article-section div {
+        padding: 10px;
+    }
+
+    #side-section {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+   }
+
+    #header input {
+        flex-grow: 1;
+   }
+
+    #header b {
+        margin-left: 5px;
+        margin-right: 5px;
+   }    
+   
+    #article-section {
+        width: 70%;
+   }
+
+    #side-section {
+        width: 30%;
+        padding: 15px;
+   }
+
+    #footer {
+        background-color: white;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    #post-form-container {
+        max-width: 300px; 
+        padding: 10px;
+        margin: auto;
+        display: none;
+    }
+
+   #post-form-container input, textarea {
+    width: 100%;
+    margin: 5px 0 20px 0;
+    padding: 10px;
+    border: 1px solid black;
+   }
+
+   #hide-btn {
+    color: darkred;
+    border: 1px solid darkred
+   }
+
+   #save-btn {
+    color: darkcyan;
+    border: 1px solid darkcyan
+   }
+
+</style>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> My App </title>
+        <script>
+            async function loadTasks(){
+                res = await fetch('get-tasks', {
+                    method: "GET",
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                })
+
+                jsonRes = await res.json()
+                ulEL =  document. getElementById("tasks")
+                for (task of jsonRes.tasks){
+                    liEL = document.createElement("li")
+                    liEL.textContent = task
+                    ulEL.appendChild(liEL)
+                    }
+            }    
+
+            async function HandleSaveTask() {
+                ulEl = document.getElementById("tasks")
+                inputEl = document.getElementById("task")
+
+                liEl = document.createElement("li")
+                liEl.textContent = inputEl.value
+                ulEl.appendChild(liEl)
+
+                payload = {
+                    task: inputEl.value
+                }
+
+                res = await fetch('save-task', {
+                    method: "POST",
+                    body: JSON.stringify(payload),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                })
+
+                jsonRes = await res.json()
+                console.log(jsonRes)
+            }
+        </script>
+        <link rel="stylesheet" href="mystyle.css" />
+        <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+        
+    </head>
+    <body onload="loadTasks()">
+        <img src="driving_cat.jpeg" />
+        <div>
+            <label> Add Task </label>
+            <input id="task" type="text" placeholder="new task" />
+            <button onclick="HandleSaveTask()"> Save </button>
+            <ul id="tasks"> </ul>
+        </div>
+    </body>
+
+
+</hmtl>
